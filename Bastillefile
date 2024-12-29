@@ -7,3 +7,4 @@ PKG bash wazuh-indexer
 # copy files
 CP etc /
 
+# enable and start service
