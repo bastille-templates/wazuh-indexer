@@ -1,4 +1,3 @@
-ARG server_ip=${JAIL_IP}
 ARG v_jdk=17
 
 CONFIG set enforce_statfs=1;
