@@ -1,0 +1,9 @@
+ARG server_ip=${JAIL_IP}
+ARG v_jdk=17
+
+# install required packages
+PKG bash wazuh-indexer
+
+# copy files
+CP etc /
+
