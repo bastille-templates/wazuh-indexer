@@ -13,6 +13,6 @@ Edii file /usr/local/bastille/jails/wazuh/fstab
 fdesc	/dev/fd		fdescfs		rw	0	0
 proc	/proc		procfs		rw	0	0
 ```
-
+/usr/local/bastille/jails/wazuh/root/.bastille
 ## License
 This project is licensed under the BSD-3-Clause license.

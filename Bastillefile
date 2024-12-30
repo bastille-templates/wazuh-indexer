@@ -25,23 +25,15 @@ CMD cd /root/wazuh-gen-certs; echo y | sh gen-certs.sh
 
 CMD mkdir -p /usr/local/etc/opensearch/certs
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/admin.pem /usr/local/etc/opensearch/certs/
-
-CMD chmod 640 /usr/local/etc/opensearch/certs/admin.pem
-CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/admin.pem
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/admin-key.pem /usr/local/etc/opensearch/certs/
-CMD chmod 640 /usr/local/etc/opensearch/certs/admin-key.pem
-CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/admin-key.pem
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/indexer1.pem /usr/local/etc/opensearch/certs/
-CMD chmod 640 /usr/local/etc/opensearch/certs/indexer1.pem
-CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/indexer1.pem
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/indexer1-key.pem /usr/local/etc/opensearch/certs/
-CMD chmod 640 /usr/local/etc/opensearch/certs/indexer1-key.pem
-CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/indexer1-key.pem
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/root-ca.pem /usr/local/etc/opensearch/certs/
-CMD chmod 640 /usr/local/etc/opensearch/certs/root-ca.pem
-CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/root-ca.pem
+CMD chmod -R 640 /usr/local/etc/opensearch/certs
+CMD chown -R opensearch:opensearch /usr/local/etc/opensearch/certs
 
 CMD cd /usr/local/etc/opensearch/opensearch-security; sh -c 'for i in $(ls *.sample ) ; do cp -p ${i} $(echo ${i} | sed "s|.sample||g") ; done'
+CMD cd /usr/local/lib/opensearch/plugins/opensearch-security/tools; sh -c "OPENSEARCH_JAVA_HOME=/usr/local/openjdk${v_jdk} ./hash.sh -p adminpass"
 
 # enable and start service
 SYSRC opensearch_enable=YES
