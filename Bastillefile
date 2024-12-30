@@ -14,7 +14,6 @@ CP etc /
 
 CMD sed -e "s,%%SERVER_IP%%,${JAIL_IP},g" -i "" /etc/hosts
 
-CMD cp /usr/local/etc/wazuh-indexer/wazuh-indexer.yml /usr/local/etc/opensearch/opensearch.yml
 CMD sed -e "s,%%SERVER_IP%%,${JAIL_IP},g" -i "" /usr/local/etc/opensearch/opensearch.yml
 CMD cd /root/; fetch "https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz"
 CMD cd /root/; tar xvfz wazuh-gen-certs.tar.gz
