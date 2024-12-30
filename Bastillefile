@@ -24,8 +24,8 @@ CMD echo 'server1_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/server.lst
 CMD cd /root/wazuh-gen-certs; echo y | sh gen-certs.sh
 
 CMD mkdir -p /usr/local/etc/opensearch/certs
-
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/admin.pem /usr/local/etc/opensearch/certs/
+
 CMD chmod 640 /usr/local/etc/opensearch/certs/admin.pem
 CMD chown opensearch:opensearch /usr/local/etc/opensearch/certs/admin.pem
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/admin-key.pem /usr/local/etc/opensearch/certs/
