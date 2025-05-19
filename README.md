@@ -3,10 +3,7 @@ The Wazuh indexer is a highly scalable, full-text search and analytics engine. T
 
 ## Now apply template to container
 ```sh
-bastille create wazuh 14.1-RELEASE YourIP-Bastille
-
-bastille bootstrap https://github.com/bastille-templates/wazuh-indexer
-bastille template wazuh bastille-templates/wazuh-indexer
+pkg info -D -x wazuh-indexer | less
 ```
 Edii file /usr/local/bastille/jails/wazuh/fstab
 ```sh

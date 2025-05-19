@@ -1,8 +1,8 @@
 ARG v_jdk=17
 
-CONFIG set enforce_statfs=1
-CONFIG set allow.mount.procfs
-CONFIG set mount.procfs
+#CONFIG set enforce_statfs=1
+#CONFIG set allow.mount.procfs
+#CONFIG set mount.procfs
 
 RESTART
 
