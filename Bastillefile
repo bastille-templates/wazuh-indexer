@@ -16,12 +16,12 @@ CP usr /
 CMD sed -e "s,%%SERVER_IP%%,${JAIL_IP},g" -i "" /etc/hosts
 
 CMD sed -e "s,%%SERVER_IP%%,${JAIL_IP},g" -i "" /usr/local/etc/opensearch/opensearch.yml
-CMD cd /root/; fetch "https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz"
-CMD cd /root/; tar xvfz wazuh-gen-certs.tar.gz
-CMD echo 'dashboard_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/dashboard.lst
-CMD echo 'indexer1_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/indexer.lst
-CMD echo 'server1_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/server.lst
-CMD cd /root/wazuh-gen-certs; echo y | sh gen-certs.sh
+#CMD cd /root/; fetch "https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz"
+#CMD cd /root/; tar xvfz wazuh-gen-certs.tar.gz
+#CMD echo 'dashboard_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/dashboard.lst
+#CMD echo 'indexer1_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/indexer.lst
+#CMD echo 'server1_ip="${JAIL_IP}"' > /root/wazuh-gen-certs/server.lst
+#CMD cd /root/wazuh-gen-certs; echo y | sh gen-certs.sh
 
 CMD mkdir -p /usr/local/etc/opensearch/certs
 CMD cp /root/wazuh-gen-certs/wazuh-certificates/admin.pem /usr/local/etc/opensearch/certs/
