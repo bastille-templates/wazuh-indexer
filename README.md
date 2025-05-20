@@ -3,7 +3,7 @@ The Wazuh indexer is a highly scalable, full-text search and analytics engine. T
 
 ## Now apply template to container
 ```sh
-pkg info -D -x wazuh-indexer | less
+bastille pkg wazuh-indexer info -D -x wazuh-indexer | less
 ```
 Edii file /usr/local/bastille/jails/wazuh/fstab
 ```sh
